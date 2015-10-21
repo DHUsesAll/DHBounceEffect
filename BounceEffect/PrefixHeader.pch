@@ -1,0 +1,12 @@
+//
+//  PrefixHeader.pch
+//  BounceEffect
+//
+//  Created by DreamHack on 15-10-14.
+//  Copyright (c) 2015年 DreamHack. All rights reserved.
+//
+
+#ifndef BounceEffect_PrefixHeader_pch
+#define BounceEffect_PrefixHeader_pch
+
+#endif
