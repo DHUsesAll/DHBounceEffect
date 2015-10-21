@@ -20,6 +20,11 @@
     self.view.backgroundColor = [UIColor darkGrayColor];
     
     DHBounceView * bounceView = [[DHBounceView alloc] initWithContentsFrame:CGRectMake(220, 80, 120, 40) interval:10];
+    bounceView.clickAction = ^(DHBounceView * bounceView) {
+    
+        [[[UIAlertView alloc] initWithTitle:nil message:@"登录成功" delegate:nil cancelButtonTitle:@"好" otherButtonTitles:nil, nil] show];
+    
+    };
     [self.view addSubview:bounceView];
     
     self.view.layer.contents = (__bridge id)[UIImage imageNamed:@"bg.jpg"].CGImage;

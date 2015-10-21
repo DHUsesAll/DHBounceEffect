@@ -49,6 +49,11 @@
     if (!self.clickAction) {
         return;
     }
+    [UIView animateWithDuration:0.45 delay:0 usingSpringWithDamping:0.15 initialSpringVelocity:5.5 options:0 animations:^{
+        [self positionControlPoints];
+    } completion:^(BOOL finished) {
+        [self stopDisplayLink];
+    }];
     self.clickAction(self);
 }
 
@@ -90,7 +95,7 @@
 
 - (void)bounceWithAnimation
 {
-    [UIView animateWithDuration:0.05 delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:1.5 options:0 animations:^{
+    [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.9 initialSpringVelocity:1.5 options:0 animations:^{
         
         self.topControlPointView.frame = CGRectOffset(self.topControlPointView.frame, 0, -self.interval);
         self.leftControlPointView.frame = CGRectOffset(self.leftControlPointView.frame, -self.interval, 0);
@@ -98,11 +103,12 @@
         self.rightControlPointView.frame = CGRectOffset(self.rightControlPointView.frame, self.interval, 0);
         
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.45 delay:0 usingSpringWithDamping:0.15 initialSpringVelocity:5.5 options:0 animations:^{
-            [self positionControlPoints];
-        } completion:^(BOOL finished) {
-            [self stopDisplayLink];
-        }];
+        
+//        [UIView animateWithDuration:0.45 delay:0 usingSpringWithDamping:0.15 initialSpringVelocity:5.5 options:0 animations:^{
+//            [self positionControlPoints];
+//        } completion:^(BOOL finished) {
+//            [self stopDisplayLink];
+//        }];
     }];
 }
 
